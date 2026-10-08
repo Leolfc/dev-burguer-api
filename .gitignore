@@ -1,2 +1,4 @@
 node_modules/
 env/
+.env
+src/config/database.cjs
