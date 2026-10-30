@@ -32,6 +32,9 @@ importers:
       mongoose:
         specifier: ^9.9.3
         version: 9.9.3
+      mongose:
+        specifier: 0.0.2-security
+        version: 0.0.2-security
       multer:
         specifier: ^2.2.0
         version: 2.2.0
@@ -602,6 +605,9 @@ packages:
   mongoose@9.9.3:
     resolution: {integrity: sha512-9dQaKct05LNgVkunDzFPZsGGBhinobl3Qc5B5KYJkLNG5lBLgqESUEItl1EUIkVaCwZJGBgTuvJiFAjjIATCiw==}
     engines: {node: '>=20.19.0'}
+
+  mongose@0.0.2-security:
+    resolution: {integrity: sha512-XJUBQHhC/12+hWtrcB1Ww+gkxSzbxg4VdjpNlBQGvFoyPm1bErhA+3n/IkWbGCkavFB1OSycpvpCRphPsZXgLw==}
 
   mpath@0.9.0:
     resolution: {integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew==}
@@ -1567,6 +1573,8 @@ snapshots:
       - mongodb-client-encryption
       - snappy
       - socks
+
+  mongose@0.0.2-security: {}
 
   mpath@0.9.0: {}
 

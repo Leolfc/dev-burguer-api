@@ -9,7 +9,7 @@ import authMiddleware from './app/middlewares/auth.js';
 import CategoryController from './app/controllers/CategoryController.js';
 import adminMiddleware from './app/middlewares/admin.js';
 import OrderController from './app/controllers/OrderController.js';
-import CreatePaymentIntent from "../src/app/controllers/Stripe/CreatePaymentIntent.js"
+import CreatePaymentIntent from '../src/app/controllers/Stripe/CreatePaymentIntent.js';
 const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
@@ -46,13 +46,12 @@ routes.put(
   CategoryController.update,
 );
 routes.get('/categories', CategoryController.index);
-export default routes;
 
 routes.post('/orders', OrderController.store);
 routes.get('/orders', OrderController.index);
 routes.put('/orders/:id', adminMiddleware, OrderController.update);
-routes.post("/create-payment-intent", CreatePaymentIntent.store)
-
+routes.post('/create-payment-intent', CreatePaymentIntent.store);
+export default routes;
 /*Metodos HTTP
 POST -> CRIAR
 GET -> LISTAR

@@ -4,7 +4,7 @@ import fileRouteConfig from './config/fileRoutes.cjs';
 import cors from 'cors';
 import 'dotenv/config';
 const app = express();
-app.use(cors("http://localhost:3001/sessions"));
+app.use(cors('http://localhost:/sessions'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/product-file', fileRouteConfig);

@@ -20,6 +20,7 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.9.3",
+    "mongose": "0.0.2-security",
     "multer": "^2.2.0",
     "pg": "^8.23.0",
     "pg-hstore": "^2.3.4",
@@ -31,5 +32,13 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.8",
     "sequelize-cli": "^6.6.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leolfc/dev-burguer-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Leolfc/dev-burguer-api/issues"
+  },
+  "homepage": "https://github.com/Leolfc/dev-burguer-api#readme"
 }

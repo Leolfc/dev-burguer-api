@@ -12,6 +12,7 @@ import bcrypt from "bcrypt"
 
 class UserController{
 async store(request, response){
+  console.log("REQUEST ",request.body)
   const schema = Yup.object({
     name:Yup.string().required(),
     email: Yup.string().email().required(),

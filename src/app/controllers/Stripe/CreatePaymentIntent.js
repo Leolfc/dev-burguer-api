@@ -1,7 +1,6 @@
 import Stripe from "stripe";
 import * as Yup from 'yup';
 import 'dotenv/config';
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const calculateOrderAmount = (items) => {
   const total = items.reduce((acc, current) => {
     return current.price * current.quantity + acc;
@@ -11,6 +10,12 @@ const calculateOrderAmount = (items) => {
 
 class CreatePaymentIntent {
   async store(request, response) {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return response.status(503).json({
+        error: 'Pagamentos indisponíveis: STRIPE_SECRET_KEY não configurada.',
+      });
+    }
+
     const schema = Yup.object({
       products: Yup.array()
         .required()
@@ -29,6 +34,7 @@ class CreatePaymentIntent {
     }
     const { products } = request.body;
     const amount = calculateOrderAmount(products);
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency: 'brl',
