@@ -11,13 +11,13 @@ import adminMiddleware from './app/middlewares/admin.js';
 import OrderController from './app/controllers/OrderController.js';
 import CreatePaymentIntent from '../src/app/controllers/Stripe/CreatePaymentIntent.js';
 const upload = multer(multerConfig);
-// 🌍 ROTAS PÚBLICAS — qualquer visitante acessa
+//rotas publicas
 routes.post('/sessions', SessionController.store);
 routes.post('/users', UserController.store);
 routes.get('/products', ProductController.index);
 routes.get('/categories', CategoryController.index);
 
-// 🔒 CATRACA — daqui pra baixo precisa de token
+//rotas privadas
 routes.use(authMiddleware);
 
 routes.post('/products', adminMiddleware, upload.single('file'), ProductController.store);
